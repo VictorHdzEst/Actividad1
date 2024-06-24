@@ -26,8 +26,7 @@ RUN chown -R nodejs:nodejs /quickstart
 COPY package.json package-lock.json
 
 # install npm packages as root; but allow nodejs user to install later
-RUN npm i --legacy-peer-deps
-RUN npm install --unsafe-perm=true
+RUN npm i --force
 
 # Startup as user nodejs
 USER nodejs
